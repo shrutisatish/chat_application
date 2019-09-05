@@ -69,3 +69,13 @@ const fire = firebase.initializeApp(firebaseConfig);
 export default fire;
 
 Please generate your own apiKey, authDomain, databaseURL, projectId, storageBucket, messagingSenderId, appId
+
+### Install the dependencies
+
+npm install
+
+### Start running code in development
+
+npm start
+
+This will open the project at http://localhost:3000 on the web browser
