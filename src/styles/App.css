@@ -1,0 +1,259 @@
+:root {
+    --main-color: black;
+    --secondary-color: white;
+    --main-text-color: #3e5869;
+    --secondary-text-color: white;
+    --send-message-form: #F5F5F5;
+}
+
+.app-login, .app-signup {
+  margin-left:62vh;
+  margin-top: 20vh;
+}
+
+.card_front, .about, .app-home {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 50%;
+    margin-left:25%;
+    margin-top: 4%;
+    text-align: center;
+    font-family: system-ui;
+}
+
+.card_back {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 50%;
+    margin-top:4%;
+    margin-left:25%;
+    text-align: center;
+    font-family: system-ui;
+}
+
+.chat_application{
+    display: grid;
+    height:95vh;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr 60px;
+    grid-template-areas:
+        "r s s s s s "
+        "r m m m m m "
+        "r m m m m m "
+        "r m m m m m "
+        "r m m m m m "
+        "n f f f f f ";
+}
+
+.app-logout {
+    position: absolute;
+    top: -4px;
+    right: 0;
+    font-family: system-ui;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 16px 33px;
+    display: inline-block;
+    margin: 4px 2px;
+}
+
+.app-settings-no-room-selected {
+  background-color: white;
+}
+
+.app-setting {
+  grid-area: s;
+  background-color: var(--send-message-form);
+  padding-left: 37%;
+}
+
+.new-room-form {
+    grid-area: n;
+}
+
+.rooms-list {
+    grid-area: r;
+}
+
+.message-list {
+    grid-area: m;
+}
+
+.send-message-form {
+    grid-area: f;
+}
+
+.room-button-link {
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.room-button-link :hover, .room-button-link :focus {
+  text-decoration: underline;
+}
+
+.rooms-list {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: var(--main-color);
+    overflow: scroll;
+    height: 100%;
+}
+
+.rooms-list > ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: scoll;
+}
+
+.rooms-list li {
+    margin: 10px 0;
+}
+
+.rooms-list > h3 {
+    margin: 5px 0;
+    color: var(--secondary-color);
+}
+
+.rooms-list .room a {
+    color: var(--secondary-text-color);
+    font-weight: 600;
+    text-decoration: none;
+
+ }
+
+.rooms-list .room.active a {
+    color: var(--secondary-color);
+}
+
+.new-room-form {
+    padding: 0 5px;
+    background: var(--secondary-color);
+    color: var(--main-text-color);
+}
+
+.new-room-form form {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-room-form input {
+    width: 135px;
+    background: var(--secondary-color);
+}
+
+.new-room-form button {
+    background: var(--secondary-color);
+    color: var(--main-text-color);
+    border: 0;
+}
+
+.new-room-form input::placeholder {
+    color: var(--main-text-color);
+    font-weight: 200;
+}
+
+.new-room-form input:focus {
+    outline-width: 0;
+}
+
+.new-room-form input {
+    border: 0;
+}
+
+.new-room-form button {
+    border: 0;
+}
+
+.search-room {
+  text-align: center;
+  width: 100%;
+  border: #007bff 4px solid;
+  height: 40px;
+}
+
+.message {
+    margin: 15px 0;
+}
+
+.message .message-username {
+    font-size: 11px;
+    color: var(--main-text-color);
+    opacity: 0.9;
+    margin-bottom: 6px;
+}
+.message .message-text {
+
+    color: var(--secondary-color);
+    display: inline;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.message-list {
+    box-sizing: border-box;
+    padding-left: 6px;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background: var(--secondary-color);
+}
+
+.message-list .join-room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 34px;
+    font-weight: 300;
+}
+
+.send-message-form {
+    background: var(--send-message-form);
+    display: flex;
+}
+
+.send-message-form input {
+    width: 100%;
+    padding: 15px 10px;
+    margin: 0;
+    border-style: none;
+    background: var(--send-message-form);
+    font-weight: 200;
+
+}
+
+.send-message-form input:focus {
+    outline-width: 0;
+}
+
+.send-message-form input::placeholder {
+    color: var(--main-text-color);
+}
+
+.delete-btn {
+  float: right;
+  background-color: red;
+  border: 1px;
+}
+
+ul {
+  list-style: none;
+}
+
+.toggle-color-palette {
+    width: 50px;
+    padding: 0;
+    justify-content: center;
+    background: var(--send-message-form);
+}
+
+.color-picker {
+  margin-top: -17%;
+  margin-left: -4%;
+}

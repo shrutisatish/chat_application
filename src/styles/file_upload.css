@@ -1,0 +1,69 @@
+.dialog-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 8%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height:53%;
+}
+
+.dialog {
+  width: 500px;
+  background-color: white;
+  display: flex;
+  align-items:  center;
+  flex-direction: column;
+  border:2px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.dialog-form {
+  width: 100%;
+  margin-bottom: 0;
+  padding: 20px;
+}
+
+.dialog-form > * {
+  display: block;
+}
+
+.dialog-label {
+  text-align: left;
+  font-size: 16px;
+}
+
+.dialog-input, .username-input {
+  width: 100%;
+}
+
+.dialog-header {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dialog-header svg {
+  width: 36px;
+  height: 36px;
+}
+
+.dialog-header button {
+  border: none;
+  width: auto;
+  padding-right: 10px;
+}
+
+input[type="text"]:focus {
+  border-color: #5C8436;
+}
+
+.submit-btn {
+  color: white;
+  background-color: red;
+  width: 100%;
+  font-family: system-ui;
+}
