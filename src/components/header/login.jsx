@@ -120,7 +120,7 @@ class Login extends React.Component {
                         type="button"
                         className="btn-block z-depth-2"
                       >
-                        Door Dash Chat Login
+                        Login
                       </MDBBtn>
                     </div>
                     <p className="font-small grey-text d-flex justify-content-center">
