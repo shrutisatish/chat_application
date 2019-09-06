@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### npm start
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -13,7 +13,7 @@ The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
 
-### `npm run build`
+### npm run build
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -30,7 +30,7 @@ Instructions can be found here:
 
 https://pusher.com/docs/chatkit/authentication
 
-You will also need to create your own instance of firebase to be able to login to the application.
+You will also need to create your own instance of firebase to be able to login to the application. PLease follow the instructions in the link below
 
 https://firebase.google.com/docs/auth/web/start
 
@@ -68,7 +68,7 @@ const firebaseConfig = {
 const fire = firebase.initializeApp(firebaseConfig);
 export default fire;
 
-Please generate your own apiKey, authDomain, databaseURL, projectId, storageBucket, messagingSenderId, appId
+Please generate your own firebaseConfig with apiKey, authDomain, databaseURL, projectId, storageBucket, messagingSenderId, appId
 
 ### Install the dependencies
 
