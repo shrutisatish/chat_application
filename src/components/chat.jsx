@@ -4,7 +4,7 @@ import Chatkit from '@pusher/chatkit-client';
 import Swal from 'sweetalert2';
 import fire from './../config/fire';
 import { tokenUrl,instanceLocator } from './../config/chatkit';
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 import RoomList from './../chat_components/room_list.jsx'
 import MessageList from './../chat_components/message_list.jsx'
@@ -212,7 +212,7 @@ class Chat extends React.Component {
       {this.state.user ?
         (
           <div className="chat_application">
-            <button className='app-logout' onClick={this.logout} color="red">Logout</button>
+            <Link to='/logout' className='app-logout' color="red" onClick={this.logout}>Logout</Link>
             <Setting
                 roomId={this.state.roomId}
                 handleAdd={this.handleAddUser}

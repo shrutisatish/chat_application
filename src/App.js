@@ -11,7 +11,7 @@ import Contact from './components/header/contact.jsx'
 import Chat from './components/chat.jsx'
 import Signup from './components/signup.jsx'
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { MDBNavbar, MDBNavLink} from "mdbreact";
 /**
  * Main component that routes to differnt components
@@ -19,7 +19,6 @@ import { MDBNavbar, MDBNavLink} from "mdbreact";
 
 function AppRouter() {
 	return (
-		<Router>
 				<div>
 					<MDBNavbar color='black' expand="md">
 								<MDBNavLink to="/" className="white-text">Home</MDBNavLink>
@@ -28,16 +27,17 @@ function AppRouter() {
 								<MDBNavLink to="/contact" className="white-text">Contact Me</MDBNavLink>
 					</MDBNavbar>
 					<div>
+						<Switch>
 							<Route path="/" exact component={Home} />
-							<Route path="/login" exact component={Login} />
-							<Route path="/about" exact component={About} />
-							<Route path="/contact" exact component={Contact} />
-							<Route path="/chat" exact component={Chat} />
-							<Route path="/signup" exact component={Signup} />
-							<Route path="/logout" exact component={Logout} />
+							<Route path="/login" component={Login} />
+							<Route path="/about" component={About} />
+							<Route path="/contact" component={Contact} />
+							<Route path="/chat" component={Chat} />
+							<Route path="/signup" component={Signup} />
+							<Route path="/logout" component={Logout} />
+						</Switch>
 					</div>
 				</div>
-		</Router>
 	);
 }
 

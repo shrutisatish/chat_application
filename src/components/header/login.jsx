@@ -1,11 +1,7 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import fire from './../../config/fire';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput  } from 'mdbreact';
-
-//import Chat from './../../components/chat.jsx'
-//import Signup from './../../components/signup.jsx'
 
 /**
  * Component that handles user login
@@ -70,24 +66,9 @@ class Login extends React.Component {
         password:''
       });
     });
-
   }
-
-  /**
-   * This function sets's the state so that the app knows that the user wants to sign up and not login
-   */
-  handleSignUp = (e) => {
-    e.preventDefault();
-    this.setState({
-      isSignUp: true
-    })
-  }
-
 
   render(){
-    if(this.state.isSignUp) {
-      this.props.history.push("/signup");
-    }
     return (
       <div className="app-login">
           <MDBContainer className="align-middle">
@@ -126,13 +107,12 @@ class Login extends React.Component {
                     </div>
                     <p className="font-small grey-text d-flex justify-content-center">
                       Don't have an account?
-                      <a
-                        href="#!"
+                      <Link
+                        to='/signup'
                         className="dark-grey-text font-weight-bold ml-1"
-                        onClick={this.handleSignUp}
                       >
                         Sign up
-                      </a>
+                      </Link>
                     </p>
                   </MDBCardBody>
                 </MDBCard>
@@ -144,8 +124,4 @@ class Login extends React.Component {
   }
 };
 
-Login.propTypes = {
-  history: PropTypes.object.isRequired,
-}
-
-export default withRouter(Login);
+export default Login;

@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 import fire from './../config/fire';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdbreact';
-
-import Chat from './../components/chat.jsx'
 
 /**
  * Component that handles user sign up
@@ -71,9 +70,6 @@ class Signup extends React.Component {
   }
 
   render () {
-    if(this.state.isLoggedIn){
-      return (<Chat />)
-    }
     return (
       <div className='app-signup'>
         <MDBContainer>
@@ -111,13 +107,12 @@ class Signup extends React.Component {
                   </div>
                   <p className="font-small grey-text d-flex justify-content-center">
                     Already have an account?
-                    <a
-                      href="#!"
+                    <Link
+                      to='/login'
                       className="dark-grey-text font-weight-bold ml-1"
-                      onClick={this.handleBackToLogin}
                     >
                       Back to login
-                    </a>
+                    </Link>
                   </p>
 
                 </MDBCardBody>
@@ -131,7 +126,7 @@ class Signup extends React.Component {
 }
 
 Signup.propTypes = {
-  history:PropTypes.string
+  history:PropTypes.object
 };
 
 export default Signup;
