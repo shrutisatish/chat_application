@@ -5,6 +5,7 @@ import './styles/file_upload.css'
 
 import Home from './components/header/home.jsx'
 import Login from './components/header/login.jsx'
+import Logout from './components/header/logout.jsx'
 import About from './components/header/about.jsx'
 import Contact from './components/header/contact.jsx'
 import Chat from './components/chat.jsx'
@@ -33,7 +34,7 @@ function AppRouter() {
 							<Route path="/contact" exact component={Contact} />
 							<Route path="/chat" exact component={Chat} />
 							<Route path="/signup" exact component={Signup} />
-							<Route path="/logout" exact component={Login} />
+							<Route path="/logout" exact component={Logout} />
 					</div>
 				</div>
 		</Router>

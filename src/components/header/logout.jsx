@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom'
 import fire from './../../config/fire';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput  } from 'mdbreact';
 
@@ -8,9 +7,9 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput  }
 //import Signup from './../../components/signup.jsx'
 
 /**
- * Component that handles user login
+ * Component that handles user logout and displays the login screen
  */
-class Login extends React.Component {
+class Logout extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -144,8 +143,8 @@ class Login extends React.Component {
   }
 };
 
-Login.propTypes = {
+Logout.propTypes = {
   history: PropTypes.object.isRequired,
 }
 
-export default withRouter(Login);
+export default Logout;

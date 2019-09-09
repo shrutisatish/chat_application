@@ -4,6 +4,7 @@ import Chatkit from '@pusher/chatkit-client';
 import Swal from 'sweetalert2';
 import fire from './../config/fire';
 import { tokenUrl,instanceLocator } from './../config/chatkit';
+import { withRouter } from 'react-router-dom'
 
 import RoomList from './../chat_components/room_list.jsx'
 import MessageList from './../chat_components/message_list.jsx'
@@ -146,7 +147,7 @@ class Chat extends React.Component {
    */
   logout = () => {
     fire.auth().signOut().then(a=>{
-      this.props.history.push("/login");
+      this.props.history.push("/logout");
     });
   }
 
@@ -242,4 +243,4 @@ class Chat extends React.Component {
 Chat.propTypes ={
   history: PropTypes.object
 };
-export default Chat;
+export default withRouter(Chat);
