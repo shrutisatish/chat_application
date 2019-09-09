@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 /**
  * Component that displays all the rooms created. It also provides the ability for the admin to delete the chat rooms.
  */
@@ -83,9 +83,13 @@ class RoomList extends React.Component {
            </ul>
         </div>
       );
-
     }
-
 }
+RoomList.propTypes = {
+  roomId: PropTypes.string,
+  subscribeToRoom: PropTypes.func,
+  rooms: PropTypes.array,
+  deleteRoom: PropTypes.func,
+};
 
 export default RoomList;

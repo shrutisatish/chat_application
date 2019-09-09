@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 import Message from './message.jsx';
 
@@ -49,5 +50,10 @@ class MessageList extends React.Component{
       );
     }
 }
+
+MessageList.propTypes = {
+  color: PropTypes.string,
+  messages: PropTypes.array
+};
 
 export default MessageList;
