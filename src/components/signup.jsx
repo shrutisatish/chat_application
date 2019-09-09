@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import fire from './../config/fire';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdbreact';
 
@@ -125,11 +126,12 @@ class Signup extends React.Component {
           </MDBRow>
         </MDBContainer>
       </div>
-  );
-
+    );
   }
-
-
 }
+
+Signup.propTypes = {
+  history:PropTypes.string
+};
 
 export default Signup;

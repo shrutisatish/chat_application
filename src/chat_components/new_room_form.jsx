@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 /**
  * Component that provides the ability to create new chat rooms
  */
@@ -45,4 +45,8 @@ class NewRoomForm extends React.Component {
       );
     }
 }
+NewRoomForm.propTypes = {
+  createRoom: PropTypes.func,
+};
+
 export default NewRoomForm;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MDBBtn, MDBInput, MDBBtnGroup, MDBIcon } from "mdbreact";
 import { MDBContainer, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 
@@ -111,5 +112,11 @@ class Setting extends React.Component {
     );
   }
 }
+
+Setting.propTypes = {
+  handleAdd: PropTypes.func,
+  handleDelete: PropTypes.func,
+  roomId: PropTypes.string,
+};
 
 export default Setting;

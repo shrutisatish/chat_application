@@ -1,7 +1,9 @@
 import React from 'react';
-import { Smile, Settings, Paperclip } from 'react-feather';
+import PropTypes from 'prop-types';
+import { Smile, Paperclip } from 'react-feather';
 import { Picker } from 'emoji-mart';
-import { SketchPicker, TwitterPicker } from 'react-color';
+//import { Settings } from 'react-feather';
+//import { SketchPicker, TwitterPicker } from 'react-color';
 import FileUploadDialogue from './file_upload_dialogue.jsx'
 
 /**
@@ -13,7 +15,7 @@ class SendMessageForm extends React.Component {
     this.state = {
       message: '',
       showEmojiPicker: false,
-      showSketchPicker: false,
+      //showSketchPicker: false,
       showPaperClip: false
     }
   }
@@ -84,7 +86,7 @@ class SendMessageForm extends React.Component {
     this.setState({
       color: color.hex,
       showSketchPicker:false
-    },()=>{ this.props.choosenColor(this.state.color) })
+    },()=> { this.props.choosenColor(this.state.color) })
   }
 
   /**
@@ -97,7 +99,7 @@ class SendMessageForm extends React.Component {
   }
 
   render(){
-    const { showEmojiPicker, showSketchPicker, showPaperClip } = this.state
+    const { showEmojiPicker, /*showSketchPicker,*/ showPaperClip } = this.state
     return (
       <form
         onSubmit={this.handleSubmit}
@@ -157,8 +159,12 @@ class SendMessageForm extends React.Component {
       </form>
     );
   }
-
-
 }
+
+SendMessageForm.propTypes = {
+  disabled: PropTypes.bool,
+  sendMessage: PropTypes.func,
+  choosenColor: PropTypes.func,
+};
 
 export default SendMessageForm;

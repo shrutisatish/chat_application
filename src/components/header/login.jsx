@@ -1,10 +1,11 @@
 import React from "react";
-import { Link, withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom'
 import fire from './../../config/fire';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput  } from 'mdbreact';
 
-import Chat from './../../components/chat.jsx'
-import Signup from './../../components/signup.jsx'
+//import Chat from './../../components/chat.jsx'
+//import Signup from './../../components/signup.jsx'
 
 /**
  * Component that handles user login
@@ -139,11 +140,12 @@ class Login extends React.Component {
             </MDBRow>
           </MDBContainer>
       </div>
-
     );
-
   }
-
 };
+
+Login.propTypes = {
+  history: PropTypes.object,
+}
 
 export default withRouter(Login);

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 /**
  * Functional component that displays the username and the message content
  */
@@ -25,4 +26,10 @@ class Message extends React.Component {
       );
     }
 }
+Message.propTypes ={
+  username: PropTypes.string,
+  text: PropTypes.string,
+  color: PropTypes.string,
+};
+
 export default Message;

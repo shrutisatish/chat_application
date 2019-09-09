@@ -1,6 +1,7 @@
 import React from 'react';
-import Chatkit from '@pusher/chatkit-client'
-import Swal from 'sweetalert2'
+import PropTypes from 'prop-types';
+import Chatkit from '@pusher/chatkit-client';
+import Swal from 'sweetalert2';
 import fire from './../config/fire';
 import { tokenUrl,instanceLocator } from './../config/chatkit';
 
@@ -28,7 +29,6 @@ class Chat extends React.Component {
   }
 
   componentDidMount = () => {
-    console.log(process.env, 'shruti')
     this.authListner();
     const chatManager = new Chatkit.ChatManager({
         instanceLocator,
@@ -147,7 +147,6 @@ class Chat extends React.Component {
   logout = () => {
     fire.auth().signOut().then(a=>{
       this.props.history.push("/login");
-      console.log(this.props.history, 'history')
     });
   }
 
@@ -240,4 +239,7 @@ class Chat extends React.Component {
   }
 }
 
+Chat.propTypes ={
+  history: PropTypes.object
+};
 export default Chat;
