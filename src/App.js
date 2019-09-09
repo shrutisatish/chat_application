@@ -9,7 +9,7 @@ import Logout from './components/header/logout.jsx'
 import About from './components/header/about.jsx'
 import Contact from './components/header/contact.jsx'
 import Chat from './components/chat.jsx'
-import Signup from './components/signup.jsx'
+import Signup from './components/header/signup.jsx'
 
 import { Route, Switch } from "react-router-dom";
 import { MDBNavbar, MDBNavLink} from "mdbreact";

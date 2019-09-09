@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import fire from './../../config/fire';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput  } from 'mdbreact';
 
-//import Chat from './../../components/chat.jsx'
-//import Signup from './../../components/signup.jsx'
-
 /**
  * Component that handles user logout and displays the login screen
  */
