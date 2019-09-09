@@ -88,7 +88,7 @@ class RoomList extends React.Component {
 RoomList.propTypes = {
   roomId: PropTypes.string,
   subscribeToRoom: PropTypes.func,
-  rooms: PropTypes.array,
+  rooms: PropTypes.arrayOf(PropTypes.object),
   deleteRoom: PropTypes.func,
 };
 
