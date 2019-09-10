@@ -3,12 +3,12 @@ import './styles/App.css';
 import './styles/emoji.css'
 import './styles/file_upload.css'
 
-import Login from './components/header_components/login.jsx'
+import Login from './components/auth_components/login.jsx'
 import About from './components/header_components/about.jsx'
 import Contact from './components/header_components/contact.jsx'
-import Chat from './components/chat.jsx'
-import Signup from './components/header_components/signup.jsx'
-import { ProtectedRoute } from './components/header_components/protected_route'
+import Chat from './chat_components/chat.jsx'
+import Signup from './components/auth_components/signup.jsx'
+import { ProtectedRoute } from './components/auth_components/protected_route'
 import { Route, Switch } from "react-router-dom";
 import { MDBNavbar, MDBNavLink} from "mdbreact";
 /**
