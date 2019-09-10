@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactCardFlip from 'react-card-flip';
 
-import Front from './../card_front';
-import Back from './../card_back';
+import Front from './../card_components/card_front';
+import Back from './../card_components/card_back';
 
 /**
  * Component that displays contact information

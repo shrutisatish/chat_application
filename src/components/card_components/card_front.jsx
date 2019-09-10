@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from './../shruti_profile.png'
+import Image from './../../shruti_profile.png'
 
 /**
  * Functional component that shows information at the front of the contact card

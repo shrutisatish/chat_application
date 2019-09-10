@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import fire from './../../config/fire';
-import auth from './../header/auth'
+import auth from './../header_components/auth'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput  } from 'mdbreact';
 
 /**

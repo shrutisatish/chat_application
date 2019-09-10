@@ -9,7 +9,7 @@ import RoomList from './../chat_components/room_list.jsx'
 import MessageList from './../chat_components/message_list.jsx'
 import NewRoomForm from './../chat_components/new_room_form.jsx'
 import SendMessageForm from './../chat_components/send_message_form.jsx'
-import Setting from './header/setting.jsx'
+import Setting from './header_components/setting.jsx'
 
 /**
  * Main component for the chat application. It is the brain of the app. Most logic happens in the component
