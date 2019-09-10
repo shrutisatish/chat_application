@@ -13,6 +13,7 @@ function About() {
       <p>Email: dummy_email@gmail.com, Password: 123456789</p>
       <p>In case you want to sign up, you can use any email id and password to signup. Once signed up you will be logged in immediately</p>
       <p>Chatkit is designed to make it as simple as possible to add chat to the application</p>
+      <p>This application had react router with protected routes implemented</p>
       <p>Capabilities:</p>
       <p>Ability to create a new Room</p>
       <p>Shows a list of all the chat rooms created</p>
