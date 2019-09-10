@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import fire from './../../config/fire';
+import auth from './../header/auth'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput  } from 'mdbreact';
 
 /**
@@ -29,8 +30,7 @@ class Login extends React.Component {
   /**
    * This function calls the login function on login button click
    */
-  handleLogin = (e) => {
-    e.preventDefault();
+  handleLogin = () => {
     this.goLogin()
 
   }
@@ -51,21 +51,20 @@ class Login extends React.Component {
     if(!this.state.email || !this.state.password){
       alert('User not registered, please signup')
     }
-    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-    .then(a => {
-      this.props.history.push('/chat')
-      this.setState({
-        isLoggedIn: true
+    auth.login(() => {
+      fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then(a => {
+        this.props.history.push('/chat')
       })
-    })
-    .catch((error)=> {
-      if(error.code === "auth/user-not-found")
-      alert('User not found in database! Please signup')
-      this.setState({
-        email:'',
-        password:''
+      .catch((error)=> {
+        if(error.code === "auth/user-not-found")
+        alert('User not found in database! Please signup')
+        this.setState({
+          email:'',
+          password:''
+        });
       });
-    });
+    })
   }
 
   render(){

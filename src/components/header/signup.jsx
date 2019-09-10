@@ -108,7 +108,7 @@ class Signup extends React.Component {
                   <p className="font-small grey-text d-flex justify-content-center">
                     Already have an account?
                     <Link
-                      to='/login'
+                      to='/'
                       className="dark-grey-text font-weight-bold ml-1"
                     >
                       Back to login

@@ -4,13 +4,11 @@ import Chatkit from '@pusher/chatkit-client';
 import Swal from 'sweetalert2';
 import fire from './../config/fire';
 import { tokenUrl,instanceLocator } from './../config/chatkit';
-import { withRouter, Link } from 'react-router-dom'
 
 import RoomList from './../chat_components/room_list.jsx'
 import MessageList from './../chat_components/message_list.jsx'
 import NewRoomForm from './../chat_components/new_room_form.jsx'
 import SendMessageForm from './../chat_components/send_message_form.jsx'
-import Login from './header/login.jsx'
 import Setting from './header/setting.jsx'
 
 /**
@@ -30,7 +28,6 @@ class Chat extends React.Component {
   }
 
   componentDidMount = () => {
-    this.authListner();
     const chatManager = new Chatkit.ChatManager({
         instanceLocator,
         userId:'maryjane',
@@ -46,25 +43,7 @@ class Chat extends React.Component {
     })
     .catch(error => console.log('error on connecting: ', error))
   }
-  /**
-   * Function to check if user is logged or not
-   */
-  authListner = () => {
-    fire.auth().onAuthStateChanged((user)=>{
-      if(user){
-        this.setState({
-          user,
-          isLoggedIn:true
 
-         })
-      }else{
-        this.setState({
-          user: null,
-          isLoggedIn: false
-         })
-      }
-    })
-  }
 
   /**
    * Function that gets all the rooms that the current user has joined as well as all the joinable rooms.
@@ -147,7 +126,7 @@ class Chat extends React.Component {
    */
   logout = () => {
     fire.auth().signOut().then(a=>{
-      this.props.history.push("/logout");
+      this.props.history.push("/");
     });
   }
 
@@ -207,12 +186,11 @@ class Chat extends React.Component {
   }
 
   render() {
+    console.log('coming here?')
     return (
       <div>
-      {this.state.user ?
-        (
           <div className="chat_application">
-            <Link to='/logout' className='app-logout' color="red" onClick={this.logout}>Logout</Link>
+            <button className='app-logout' color="red" onClick={this.logout}>Logout</button>
             <Setting
                 roomId={this.state.roomId}
                 handleAdd={this.handleAddUser}
@@ -232,8 +210,6 @@ class Chat extends React.Component {
                 disabled={!this.state.roomId}
                 sendMessage={this.sendMessage}/>
           </div>
-        ):(<Login isLoggedIn={this.state.isLoggedIn}/>)}
-
       </div>
 
     );
@@ -243,4 +219,4 @@ class Chat extends React.Component {
 Chat.propTypes ={
   history: PropTypes.object
 };
-export default withRouter(Chat);
+export default Chat;
