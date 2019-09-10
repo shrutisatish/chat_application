@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Chatkit from '@pusher/chatkit-client';
 import Swal from 'sweetalert2';
-import fire from './../config/fire';
-import { tokenUrl,instanceLocator } from './../config/chatkit';
+import fire from './../../config/fire';
+import { tokenUrl,instanceLocator } from './../../config/chatkit';
 
 import RoomList from './../chat_components/room_list.jsx'
 import MessageList from './../chat_components/message_list.jsx'
