@@ -34,7 +34,7 @@ class Signup extends React.Component {
       alert('Please enter Username and Password!')
     }
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-    .then(a=>{
+    .then(a => {
       this.props.history.push('/chat')
     })
     .catch((error)=> {

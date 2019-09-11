@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.488" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2019-09-11T23:58:00" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Chat Application Login" timestamp="2019-09-11T23:58:00" tests="5" failures="0" time="5.488">
+    <testcase name="Chat Application Login Should Show Landing Page" time="1.356" classname="Should Show Landing Page">
+    </testcase>
+    <testcase name="Chat Application Login Login with valid credentials" time="1.74" classname="Login with valid credentials">
+    </testcase>
+    <testcase name="Chat Application Login Login with invalid credentials" time="1.04" classname="Login with invalid credentials">
+    </testcase>
+    <testcase name="Chat Application Login Login with only email and no password shpuld fail" time="0.679" classname="Login with only email and no password shpuld fail">
+    </testcase>
+    <testcase name="Chat Application Login Login with only password and no email should fail" time="0.673" classname="Login with only password and no email should fail">
+    </testcase>
+  </testsuite>
+</testsuites>
