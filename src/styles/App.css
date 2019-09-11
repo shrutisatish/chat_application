@@ -125,8 +125,9 @@
 
  }
 
-.rooms-list .room.active a {
+.rooms-list .room.active button {
     color: var(--secondary-color);
+
 }
 
 .new-room-form {

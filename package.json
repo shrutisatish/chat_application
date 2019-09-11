@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^3.4.1",
     "dotenv": "^8.1.0",
     "react-card-flip": "^0.8.1"
   }

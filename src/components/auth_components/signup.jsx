@@ -35,9 +35,7 @@ class Signup extends React.Component {
     }
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
     .then(a=>{
-      this.setState({
-        isLoggedIn: true
-      })
+      this.props.history.push('/chat')
     })
     .catch((error)=> {
       console.log(error)

@@ -1,0 +1,16 @@
+{
+    "baseUrl": "http://localhost:3000",
+    "username": "dummy_email@gmail.com",
+    "password": "123456789",
+    "invalid_username": "dummy@gmail.com",
+    "invalid_password": "674839232",
+    "chromeWebSecurity": false,
+    "defaultCommandTimeout": 60000,
+    "reporter": "junit",
+    "reporterOptions": {
+    	"mochaFile": "results/test-[hash].xml",
+    	"toConsole": true
+    },
+    "viewportWidth": 1600,
+    "viewportHeight": 900
+}
