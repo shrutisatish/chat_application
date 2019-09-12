@@ -1,17 +1,44 @@
-// describe('Chat Application Signup', () => {
-//     before(() => {
-//         cy.visit('/')
-//     })
-//     it('Verify Signup functionality', () => {
-//         cy.get('.dark-grey-text').click()
-//         cy.url().should('contain', 'signup')
-//         cy.get('.deep-grey-text').should('contain', 'Sign Up!')
-//         cy.get('.dark-grey-text').should('contain', 'Back to login')
-//         cy.get(':nth-child(1) > [data-test=input]').type('hello1@gmail.com')
-//         cy.get(':nth-child(2) > [data-test=input]').type('helloworld1234')
-//         cy.get('[data-test=button]').click()
-//         //cy.url().should('contain', 'chat')
-//         //cy.get('.app-logout').click()
-//
-//     })
-// })
+describe('Chat Application Signup', () => {
+    before(() => {
+        cy.visit('/')
+    })
+    it('Verify Signup functionality', () => {
+        cy.get('.dark-grey-text').click()
+        cy.url().should('contain', 'signup')
+        cy.get('.deep-grey-text').should('contain', 'Sign Up!')
+        cy.get('.dark-grey-text').should('contain', 'Back to login')
+        cy.get(':nth-child(1) > [data-test=input]').type('hello1@gmail.com')
+        cy.get(':nth-child(2) > [data-test=input]').type('helloworld1234')
+        cy.get('[data-test=button]').click()
+        cy.get('.swal2-header').should('be.visible')
+        cy.get('#swal2-content').should('contain', 'Successful login, Please login now')
+        cy.get('#swal2-title').should('contain', 'Yaay!')
+        cy.get('.swal2-confirm').click()
+        cy.login()
+        cy.get('.app-logout').click()
+    })
+
+    it('Login with only email and no password should fail', () => {
+      cy.get('.dark-grey-text').click()
+      cy.get(':nth-child(1) > [data-test=input]').type('hello1@gmail.com')
+      cy.get('[data-test=button]').click()
+      cy.get('.swal2-header').should('be.visible')
+      cy.get('#swal2-title').should('contain', 'Oops...')
+      cy.get('#swal2-content').should('contain', 'The password must be 6 characters long or more.')
+      cy.get('.swal2-confirm').click()
+      cy.url().should('contain', '/')
+      cy.get(':nth-child(1) > [data-test=input]').clear()
+    })
+
+    it('Login with only password and no email should fail', () => {
+      cy.get('.dark-grey-text').click()
+      cy.get(':nth-child(2) > [data-test=input]').type('helloworld1234')
+      cy.get('[data-test=button]').click()
+      cy.get('.swal2-header').should('be.visible')
+      cy.get('#swal2-title').should('contain', 'Oops...')
+      cy.get('#swal2-content').should('contain', 'Please enter Username and Password!')
+      cy.get('.swal2-confirm').click()
+      cy.url().should('contain', '/')
+      cy.get(':nth-child(2) > [data-test=input]').clear()
+    })
+})
