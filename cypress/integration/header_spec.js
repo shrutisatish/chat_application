@@ -28,6 +28,7 @@ describe('Chat Application Header', () => {
         cy.get('.about > :nth-child(19)').should('be.visible')
         cy.get('.about > :nth-child(20)').should('be.visible')
     })
+
     it('Test contact link in header', () => {
         cy.get('[href="/contact"]').should('be.visible')
         cy.get('[href="/contact"]').click()
@@ -44,5 +45,4 @@ describe('Chat Application Header', () => {
         cy.get('h2').should('be.visible')
         cy.get('.container > :nth-child(5)').should('be.visible')
     })
-
 })
