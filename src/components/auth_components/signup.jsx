@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2';
 import fire from './../../config/fire';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdbreact';
 
@@ -31,16 +32,28 @@ class Signup extends React.Component {
    */
   goSignup = () => {
     if(!this.state.email || !this.state.password){
-      alert('Please enter Username and Password!')
+      Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please enter Username and Password!'
+      })
     }
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
     .then(a => {
       this.props.history.push('/chat')
+      Swal.fire({
+        type: 'success',
+        title: 'Yaay!',
+        text: "Successful login, Please login now",
+      })
     })
     .catch((error)=> {
-      console.log(error)
       if(error.code === "auth/weak-password"){
-        alert(error.message)
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: `${error.message}`
+        })
       }
     })
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import fire from './../../config/fire';
+import Swal from 'sweetalert2';
 import auth from './../auth_components/auth'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput  } from 'mdbreact';
 
@@ -49,7 +50,11 @@ class Login extends React.Component {
    */
   goLogin = () => {
     if(!this.state.email || !this.state.password){
-      alert('User not registered, please signup')
+      Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please enter Username and Password!'
+      })
     }
     auth.login(() => {
       fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -58,7 +63,11 @@ class Login extends React.Component {
       })
       .catch((error)=> {
         if(error.code === "auth/user-not-found")
-        alert('User not found in database! Please signup')
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'User not found in database! Please signup'
+        })
         this.setState({
           email:'',
           password:''
