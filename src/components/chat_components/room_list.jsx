@@ -54,10 +54,11 @@ class RoomList extends React.Component {
                           title="Click to delete room"
                           className="delete-btn"
                           id={room.id}
+                          name={room.name}
                           type="submit"
                           onClick={this.handleDelete}>
                           --
-                          </button>
+                        </button>
                      </li>
                    )
                  })
@@ -73,10 +74,11 @@ class RoomList extends React.Component {
                         title="Click to delete room"
                         className="delete-btn"
                         id={room.id}
+                        name={room.name}
                         type="submit"
                         onClick={this.handleDelete}>
                         --
-                        </button>
+                      </button>
                    </li>
                  )
                })}

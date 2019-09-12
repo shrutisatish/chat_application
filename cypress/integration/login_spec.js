@@ -18,6 +18,7 @@ describe('Chat Application Login', () => {
       cy.get('[data-test=button]').click()
       cy.url().should('contain', 'chat')
       cy.get('.app-logout').click()
+      cy.url().should('contain', '/')
     })
     it('Login with invalid credentials', () => {
       cy.get(':nth-child(1) > [data-test=input]').type(Cypress.config('invalid_username'))
